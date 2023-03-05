@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Sheets</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        a, p {
+            font-family: nunito;
+        }
+
+        h2, h3 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 10px;
+        }
+
+        .footer {
+            background-color: cadetblue;
+            display: flex;
+        }
+
+        .footer a {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <ul>
+        <li><img src="logo.png" alt="" style="width: 60px; height: auto; padding: 10px;"></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#Innovation">Innovation</a></li>
+        <li><a href="#Research">Research</a></li>
+        <li><a href="#Admission">Admission</a></li>
+        <li><a href="#Campus Life">Campus Life</a></li>
+        <li><a href="#Alumni">Alumni</a></li>
+        <li><a href="#About">About</a></li>
+    </ul>
+    </div>
+
+    <h1 style="font-family: nunito; font-weight: 1000; color: crimson;"><center>University of Technology - Coimbatore</center></h1>
+
+    <h2>About</h2>
+    <p id="About" style="font-family: nunito;">
+        The UoT-C community is driven by a shared purpose: to make a better world through education, research, and innovation. We are fun and quirky, elite but not elitist, inventive and artistic, obsessed with numbers, and welcoming to talented people regardless of where they come from.
+    </p>
+
+    <h2>Course List</h2>
+    <div class="row" style="background-color: antiquewhite; overflow: auto;">
+        <div class="column">
+            <h3>CSE</h3>
+            <p>
+                It is a four-year undergraduate engineering course wherein students study computer software & hardware for theoretical & practical knowledge. The CSE course covers computational-related subjects such as programming languages, algorithm analysis, software, device hardware & programme design.
+            </p>
+        </div>
+        <div class="column">
+            <h3>MECH</h3>
+            <p>
+                Mechanical engineering is a four-year BTech programme that teaches the students a basic understanding and knowledge of how heavy tools and machinery work. A student pursuing a mechanical engineering programme will acquire knowledge about designing automobiles, electric motors, aircraft and other heavy vehicles            
+            </p>
+        </div>
+        <div class="column">
+            <h3>IT</h3>
+            <p>
+                Information Technology (IT) courses and specializations teach cloud computing, cyber security, data management, networking, and more. Learn to use computers to meet day-to-day business needs and launch or advance your career in the IT industry.            
+            </p>
+        </div>
+    </div>
+
+    <div class="footer" style="color: aliceblue;">
+        <div class="quick_links column">
+            <h3>Quick links</h3>
+            <ul>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Admission">Admission</a></li>
+                <li><a href="#Alumni Portal">Alumni Portal</a></li>
+                <li><a href="#Research">Research</a></li>
+            </ul>
+        </div>
+        <div class="quick_links column">
+            <h3>Quick links</h3>
+            <ul>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Admission">Admission</a></li>
+                <li><a href="#Alumni Portal">Alumni Portal</a></li>
+                <li><a href="#Research">Research</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
