@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        .forms {
+            padding: 10px;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
+            width: 50%;
+            border-radius: 5px;         
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.myForm.name.value;
+            var mail = document.myForm.mail.value;
+            var phone = document.myForm.phone.value;
+            var dob = document.myForm.dob.value;
+            var gender = document.myForm.gender.value;
+
+            var birthDate = new Date(dob);
+            var today = new Date();
+            var age = today.getFullYear() - birthDate.getFullYear();
+
+            if (name == "" || mail == "" || phone == "" || dob == "") {
+                alert("All fields must be filled out");
+                return false;
+            }            
+
+            if(age < 5 || age > 21) {
+                alert("Age must be between 5 and 21");
+                return false;
+            }
+
+            if(!mail.includes("@") || !mail.includes(".")) {
+                alert("Invalid mail");
+                return false;
+            }
+
+            if(isNaN(phone)) {
+                alert("Phone number must be numeric");
+                return false;
+            }
+
+            if(phone.length != 10) {
+                alert("Phone number must be 10 digits");
+                return false;
+            }
+
+            if(gender != "on") {
+                alert("Gender must be selected");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="forms">
+        <h1>Registration Form</h1>
+        <form action="" name="myForm" onsubmit="validateForm()">
+            <input type="text" name="name" id="name" placeholder="Name"> <br><br>
+            <input type="text" name="dob" id="dob" placeholder="DOB (YYYY-MM-DD)"> <br><br>
+            <input type="text" name="mail" id="mail" placeholder="Mail"> <br><br>
+            <input type="text" name="phone" id="phone" placeholder="Phone"> <br><br>
+
+            <select name="courses" id="courses">
+                <option value="cse">CSE</option>
+                <option value="mech">MECH</option>
+                <option value="it">IT</option>
+            </select> <br><br>
+
+            <p>Gender: </p>
+            <input type="radio" name="gender" id="">Male
+            <input type="radio" name="gender" id="femlale">Female
+            <input type="radio" name="gender" id="trans">Transgender <br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
