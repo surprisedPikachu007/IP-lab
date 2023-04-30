@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Authorization</title>
+
+    <script>
+        function search() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    auth(this);
+                }
+            };
+            xhttp.open("GET", "info.xml", true);
+            xhttp.send();
+        }
+
+        function auth(xml) {
+            var xmlDoc = xml.responseXML;
+            console.log(xmlDoc);
+
+            var id = document.getElementById("id").value;
+            var password = document.getElementById("password").value;
+            
+            var users = xmlDoc.getElementsByTagName("user");
+            console.log(users);
+
+            var found = 0;
+            for (let i = 0; i < users.length; i++) {
+                var uid = users[i].children[0].textContent;
+                var pwd = users[i].children[1].textContent;
+
+                if (uid == id && pwd == password) {
+                    found = 1;
+                    break;
+                } else if (uid == id && pwd != password) {
+                    found = 2;
+                    break;
+                }
+            }
+
+            if (found == 0) {
+                document.write("No such user");
+            } else if (found == 1) {
+                document.write("Authorized");
+            } else {
+                document.write("Wrong password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <pre>
+        <center>
+            <form name="authForm">
+                User id: <input type="text" id="id"> <br>
+                Password: <input type="password" id="password"> <br>
+                <input type="submit" value="Login" onclick="search()">
+            </form>
+        </center>
+    </pre>
+</body>
+</html>
