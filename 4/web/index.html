@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <style>
+        .box {
+            padding: 10;
+            border: 1px black solid;
+            border-radius: 4px;
+            margin: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="Postparam" method=POST action="postparam">
+
+        <h1>Register</h1>
+
+        <div class="box">
+            <h2>Account details</h2>
+            <input type="text" name="email" placeholder="Email" required /><br><br>
+            <input type="password" placeholder="Password" required /><br><br>
+            <button>Verify mail</button>
+
+            <div class="verify-mail" hidden="true">
+            <p>An OTP has been sent to your mail. Enter it to verify your eamil.</p>
+            <input type="text" placeholder="OTP"> <br><br>
+            <button>Submit</button>
+            </div>
+            
+        </div>
+
+        <div class="box">
+            <h2>User Profile</h2>
+            <input type="text" name="name" placeholder="Name" /><br><br>
+            <input type="text" name="phone" placeholder="Phone" /><br><br>
+            <button>Verify phone</button>
+            <p>Gender</p>
+            <input type="radio" name="male">Male
+            <input type="radio" name="female">Female
+            <input type="radio" name="prefer">Prefer no to say
+            <br><br>
+        </div>
+
+        <div class="box">
+            <h2>Agreements</h2>
+            <input type="checkbox" name="company-terms"> I hereby agree to the terms and conditions* <br>
+            <input type="checkbox" name="privacy-policy"> I have read the privacy policy and completely understand them*
+            <br><br>
+            <input type="submit" value="Register" />
+        </div>
+
+    </form>
+</body>
+
+</html>
