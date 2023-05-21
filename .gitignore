@@ -1,3 +1,6 @@
 .vscode
 /5/build/
 /5/nbproject/private/
+**/nbproject/private/
+**/build/
+**/dist/
