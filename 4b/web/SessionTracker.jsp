@@ -40,10 +40,10 @@
 			nightCount++;
 		}
 
-		session.setAttribute("morningCount", 5);
-		session.setAttribute("afternoonCount", 3);
+		session.setAttribute("morningCount", morningCount);
+		session.setAttribute("afternoonCount", afternoonCount);
 		session.setAttribute("eveningCount", eveningCount);
-		session.setAttribute("nightCount", 7);
+		session.setAttribute("nightCount", nightCount);
 	%>
 	
 	<h2>Session Count by Times of the Day</h2>
